@@ -24,7 +24,10 @@ function nowParis() {
 }
 
 // Dimanche 18h00 à 19h00 (borne haute exclue), heure de Paris.
+// FORCE_OPEN=true permet de tester la roue en dehors du créneau (à retirer
+// avant le vrai lancement).
 function isOpen(dt) {
+  if (process.env.FORCE_OPEN === "true") return true;
   if (dt.weekday !== 7) return false; // Luxon: 1=lundi ... 7=dimanche
   const minutes = dt.hour * 60 + dt.minute;
   return minutes >= 18 * 60 && minutes < 19 * 60;

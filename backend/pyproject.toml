@@ -1,0 +1,10 @@
+[project]
+name = "oclock-wheel"
+version = "0.1.0"
+description = "Roue de la fortune dominicale O'Clock"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "pydantic>=2.6",
+]
